@@ -51,9 +51,32 @@ const fbSignIn = async (email, password) => {
   }
 }
 
-const fbSignOut =  () => {
+const fbSignOut = () => {
   auth.signOut();
 }
 
-export { auth, fbSignIn, fbSignUp, fbSignOut };
+const saveReportToDB = (uid, reportData) => {
+  try {
+    db.collection("reports").add({
+      uid: uid,
+      report: reportData
+    });
+  } catch(err) {
+    console.error(err);
+    alert(err);
+  }
+}
+
+const getReportsByUid = (uid) => {
+  db.collection('reports')
+  .where("uid", "==", uid)
+  .get()
+  .on("value", function(snapshot) { 
+    snapshot.forEach(function(data) {
+       console.log("The data is: ", data);
+    });  
+ });
+}
+
+export { auth, fbSignIn, fbSignUp, fbSignOut, saveReportToDB };
 export default db;
