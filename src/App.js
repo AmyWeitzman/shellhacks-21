@@ -13,7 +13,6 @@ function App() {
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged(userAuth => {
       if (userAuth) {
-        console.log('userAuth', userAuth)
         const user = {
           uid: userAuth.uid,
           email: userAuth.email
@@ -33,7 +32,7 @@ function App() {
         <Switch>
           <Route exact path="/signin" component={SignIn} />
           <Route exact path="/signup" component={SignUp} />
-          <Route exact path="/dashboard" component={user ? Dashboard : SignIn} />
+          <Route exact path={"/" | "/dashboard"} component={user ? Dashboard : SignIn} />
         </Switch>
       </BrowserRouter>
     </div>

@@ -18,14 +18,17 @@ const db = firebase.firestore();
 
 const fbSignUp = async (email, password) => { 
   try {
-    const res = auth.createUserWithEmailAndPassword(email, password);
-    const user = res.user;
-    await db.collection("users").add({
-      uid: user.uid,
-      authProvider: "local",
-      email
+    auth.createUserWithEmailAndPassword(email, password)
+    .then(firebaseUser => {
+      db.collection("users").add({
+        uid: firebaseUser.uid,
+        email: firebaseUser.email
+      });
+      return firebaseUser;
+    })
+    .catch(function(error) {
+      alert(error)
     });
-    return user;
   } catch (err) {
     console.error(err);
     alert(err.message);
@@ -34,20 +37,22 @@ const fbSignUp = async (email, password) => {
 
 const fbSignIn = async (email, password) => {
   try {
-    const res = auth.signInWithEmailAndPassword(email, password);
-    const user = res.user;
-    console.log("fbSignIn user: ", user);
-    const userInfo = await db
-      .collection("users")
-      .where("uid", "==", user.uid)
-      .get();
-    console.log("fbSignIn userInfo: ", userInfo);
-    return userInfo;
+    auth.signInWithEmailAndPassword(email, password)
+    .then(firebaseUser => {
+      db.collection("users")
+      .where("uid", "==", firebaseUser.uid)
+      .get()
+      .then(userInfo => userInfo)
+    })  
   } catch (err) {
     console.error(err);
     alert(err.message);
   }
 }
 
-export { auth, fbSignIn, fbSignUp };
+const fbSignOut =  () => {
+  auth.signOut();
+}
+
+export { auth, fbSignIn, fbSignUp, fbSignOut };
 export default db;

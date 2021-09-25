@@ -1,9 +1,11 @@
 import React, { useRef }  from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { fbSignIn } from '../firebaseApp';
 import './SignIn.css';
 
 export default function SignIn() {
+  const history = useHistory();
+
   const emailRef = useRef(null);
   const passwordRef = useRef(null);
 
@@ -11,7 +13,7 @@ export default function SignIn() {
     e.preventDefault();
     fbSignIn(emailRef.current.value, passwordRef.current.value)
     .then(user => {
-      console.log('SignIn Component user', user);
+      history.push('/dashboard');
     }).catch(err => {
       console.log(err);
     })
