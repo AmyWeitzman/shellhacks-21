@@ -1,9 +1,9 @@
 import React, { useRef }  from 'react';
 import { useHistory } from 'react-router-dom';
-import { fbSignIn } from '../firebaseApp';
+import { fbSignIn } from '../../firebaseApp';
 import './SignIn.css';
 
-import AuthForm from './AuthForm';
+import AuthForm from '../forms/AuthForm';
 
 export default function SignIn() {
   const history = useHistory();
@@ -28,6 +28,7 @@ export default function SignIn() {
         onSubmit={signIn} 
         emailRef={emailRef} 
         passwordRef={passwordRef} 
+        urlRef={null}
         otherAuthType={"Sign up"}
         otherAuthPrefixText={"Don't"}
         otherAuthRoute={"signup"} 

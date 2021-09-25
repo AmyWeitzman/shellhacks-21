@@ -1,19 +1,20 @@
 import React, { useRef }  from 'react';
 import { useHistory } from 'react-router-dom';
-import { fbSignUp } from '../firebaseApp';
+import { fbSignUp } from '../../firebaseApp';
 import './SignUp.css';
 
-import AuthForm from './AuthForm';
+import AuthForm from '../forms/AuthForm';
 
 export default function SignUp() {
   const history = useHistory();
 
   const emailRef = useRef(null);
   const passwordRef = useRef(null);
+  const urlRef = useRef(null);
 
   const signUp = (e) => {
     e.preventDefault();
-    fbSignUp(emailRef.current.value, passwordRef.current.value)
+    fbSignUp(emailRef.current.value, passwordRef.current.value, urlRef.current.value)
     .then(user => {
       history.push('/dashboard');
     }).catch(err => {
@@ -28,6 +29,7 @@ export default function SignUp() {
         onSubmit={signUp} 
         emailRef={emailRef} 
         passwordRef={passwordRef} 
+        urlRef={urlRef}
         otherAuthType={"Sign in"}
         otherAuthPrefixText={"Already"}
         otherAuthRoute={"signin"} 

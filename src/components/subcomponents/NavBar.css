@@ -12,5 +12,10 @@
 
 #sign-out-btn {
   width: 50%;
-  margin: auto
+  margin: auto;
+}
+
+.nav-item:hover {
+  color:rgb(28, 91, 226);
+  cursor: pointer;
 }

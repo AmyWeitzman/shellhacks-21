@@ -16,13 +16,14 @@ const app = initializeApp(firebaseConfig);
 const auth = app.auth();
 const db = firebase.firestore();
 
-const fbSignUp = async (email, password) => { 
+const fbSignUp = async (email, password, url) => { 
   try {
     auth.createUserWithEmailAndPassword(email, password)
     .then(firebaseUser => {
       db.collection("users").add({
         uid: firebaseUser.uid,
-        email: firebaseUser.email
+        email: firebaseUser.email,
+        url: url
       });
       return firebaseUser;
     })

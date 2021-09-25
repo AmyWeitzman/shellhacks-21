@@ -1,9 +1,9 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
-import { fbSignOut } from '../firebaseApp';
+import { fbSignOut } from '../../firebaseApp';
 import "./NavBar.css";
 
-const NavBar = () => {
+const NavBar = ({ switchView }) => {
   const history = useHistory();
 
   const signOut = () => {
@@ -14,18 +14,18 @@ const NavBar = () => {
   return (
     <ul class="nav flex-column" id="navbar-container">
       <li class="nav-item">
-        <a class="nav-link active" href="#">My profile</a>
+        <div class="nav-link" onClick={() => switchView("profile")}>My profile</div>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Scan website</a>
+        <div class="nav-link" onClick={() => switchView("scan")}>Scan website</div>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Report history</a>
+        <div class="nav-link" onClick={() => switchView("reports")}>Report history</div>
       </li>
       <li class="nav-item">
         <div class="navbar-spacer"></div>
       </li>
-      <li class="nav-item align-iterm-end">
+      <li class="nav-item">
         <button onClick={signOut} class="btn btn-primary btn-block" id="sign-out-btn">Sign out</button>
       </li>
     </ul>
