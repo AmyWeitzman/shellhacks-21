@@ -11,7 +11,7 @@ export default function SignIn() {
     e.preventDefault();
     fbSignIn(emailRef.current.value, passwordRef.current.value)
     .then(user => {
-      console.log('user', user);
+      console.log('SignIn Component user', user);
     }).catch(err => {
       console.log(err);
     })
