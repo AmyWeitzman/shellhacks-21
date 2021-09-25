@@ -1,6 +1,33 @@
 #report-title {
   text-align: center;
   font-weight: bold;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
 }
 
+.report-section {
+  margin-bottom: 30px;
+}
+
+.category-item {
+  font-size: 1.75rem;
+}
+
+.category-heading {
+  font-weight: bold;
+}
+
+.issue-item {
+  font-size: 1.5rem;
+}
+
+.issue-item-red {
+  color: rgb(187, 10, 10);
+}
+
+.issue-item-yellow {
+  color: rgb(238, 203, 4);
+}
+
+.issue-item-green {
+  color: green;
+}

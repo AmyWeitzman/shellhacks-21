@@ -14,7 +14,7 @@ const Scan = ({ uid, url }) => {
     fetch(`${BASE_URL}?key=${API_KEY}&reporttype=2&url=${url}`)
     .then(res => res.json())
     .then(data => {
-      const parsedData = data.categories;
+      var parsedData = data.categories;
       setReport(parsedData);
       saveReportToDB(uid, parsedData);
     });

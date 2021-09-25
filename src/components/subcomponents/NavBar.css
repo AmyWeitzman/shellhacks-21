@@ -1,9 +1,9 @@
 #navbar-container {
   border: solid lightgray 2px;
-  height: 75%;
+  height: 500px;
   border-radius: 10px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
 }
 
 .navbar-spacer {
@@ -11,8 +11,7 @@
 }
 
 #sign-out-btn {
-  width: 50%;
-  margin: auto;
+  width: 100%;
 }
 
 .nav-item:hover {

@@ -25,7 +25,7 @@ const NavBar = ({ switchView }) => {
       <li class="nav-item">
         <div class="navbar-spacer"></div>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" id="sign-out-btn-container">
         <button onClick={signOut} class="btn btn-primary btn-block" id="sign-out-btn">Sign out</button>
       </li>
     </ul>
