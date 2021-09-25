@@ -1,21 +1,20 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom';
-import { fbSignOut } from '../firebaseApp';
 import './Dashboard.css';
 
+import NavBar from './NavBar';
+
 const Dashboard = () => {
-    const history = useHistory();
-
-    const signOut = () => {
-        fbSignOut();
-        history.push('/signin');
-    }
-
     return (
-        <div>
-            <h1 id="homepage-title">Welcome to Real Life!</h1>
-            <button onClick={signOut}>Signout</button>
+      <div id="dashboard-container">
+        <div className="row">
+          <div className="col-2">
+            <NavBar />
+          </div>
+          <div className="col">
+            <p>test</p>
+          </div>
         </div>
+      </div>
     );
 };
       
