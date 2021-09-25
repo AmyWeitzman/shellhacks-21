@@ -1,7 +1,9 @@
 import React, { useRef }  from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { fbSignUp } from '../firebaseApp';
 import './SignUp.css';
+
+import AuthForm from './AuthForm';
 
 export default function SignUp() {
   const history = useHistory();
@@ -20,24 +22,16 @@ export default function SignUp() {
   }
 
   return(
-    <div className="login-wrapper">
-      <h1>Sign Up</h1>
-      <form onSubmit={signUp}>
-        <label>
-          <p>Email</p>
-          <input type="text" ref={emailRef}/>
-        </label>
-        <label>
-          <p>Password</p>
-          <input type="password" ref={passwordRef}/>
-        </label>
-        <div>
-          <button type="submit">Submit</button>
-        </div>
-        <div>
-          Already have an account? <Link to="/signin">Sign in</Link> now.
-        </div>
-      </form>
+    <div className="auth-wrapper">
+      <AuthForm 
+        authType={"Sign up"} 
+        onSubmit={signUp} 
+        emailRef={emailRef} 
+        passwordRef={passwordRef} 
+        otherAuthType={"Sign in"}
+        otherAuthPrefixText={"Already"}
+        otherAuthRoute={"signin"} 
+      />
     </div>
   )
 }

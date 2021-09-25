@@ -40,3 +40,9 @@
 .wrapper {
   padding: 20px;
 }
+
+#app-title {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 50px;
+}

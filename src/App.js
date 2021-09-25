@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { auth } from './firebaseApp';
 import './App.css';
+import { APP_NAME } from './constants';
 
 import Dashboard from '../src/components/Dashboard';
 import SignIn from './components/SignIn';
@@ -27,7 +28,7 @@ function App() {
 
   return (
     <div className="wrapper">
-      <h1>Application</h1>
+      <h1 id="app-title">{APP_NAME}</h1>
       <BrowserRouter>
         <Switch>
           <Route exact path="/signin" component={SignIn} />
