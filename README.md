@@ -1,70 +1,13 @@
-# Getting Started with Create React App
+# [Ally](https://amyweitzman.github.io/shellhacks-21/)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Image of Yaktocat](https://octodex.github.com/images/yaktocat.png)
 
-## Available Scripts
+Did you know that 3.8 million U.S. adults aged 21-64 are blind or have trouble seeing, even with glasses? Or that more than 466 million people worldwide have a hearing disability? Unfortunately, 98% of the world's top one million websites don't offer full accessibility and 71% of website visitors with disabilities will leave a website that is not accessible. With technology being a prominent feature of everyday life, it is crucial that people develop websites that adhere to accessibility standards and guidelines so that everyone has an opportunity to access content on the web. However, much of the tools and information that is available to help developers ensure that their sites contain the necessary accessibility features is not well known and requires people to use multiple tools. Thus, it is easy for developers to skip this crucial development step. But, since the internet is necessary for everyone's lives, developers should be an ally for the A11Y community. I created a website that eases this process and provides centralized tools and resources for developers to check the accessibility of their site and receive guidance on how to fix the issues. 
 
-In the project directory, you can run:
+Ally is a web application that helps developers find the accessibility issues in their site and fix them using provided guidance and resources. Ally allows users to create an account and run a scan on their website URL to check against Web Content Accessibility Guideline (WCAG) errors. After the scan, the user will be provided with a report of accessibility errors, categorized by type, along with brief explanations of the specific issues. The categories are color-coded based on how many issues were found in that category to alert the user to areas that need more work than others. The user can also view a breakdown the errors by category to see which categories they are doing better or worse in to guide their future website updates. When the report is generated, the user can also receive an email sent via Courier. If I had more time, I would also include a way for users to view past reports and see metrics about how their site accessibility is improving. Finally, there is a page with a list of resources to help developers fix accessibility issues. Overall, the website includes many accessibility features itself, including contrasting colors, symbols along with text and color, and patterns on the report chart for those who are colorblind.
 
-### `yarn start`
+The web app was built using React, Bootstrap, Chart.js, Firebase, the [WAVE Web Accessibility API](https://wave.webaim.org/), and the Courier API.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+This project was created as part of ShallHacks 2021.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[Source: CrownPeak](https://www.crownpeak.com/blog/accessibility-ada/the-ultimate-list-of-web-accessibility-and-ada-statistics)
