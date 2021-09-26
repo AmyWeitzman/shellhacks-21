@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { saveReportToDB } from '../../../firebaseApp';
+import { sendNotification } from '../../../courierService';
 import './ScanReport.css';
 
 import Report from '../Report';
@@ -7,7 +8,7 @@ import Report from '../Report';
 const BASE_URL = "https://wave.webaim.org/api/request";
 const API_KEY = process.env.REACT_APP_WAVE_API_KEY;
 
-const Scan = ({ uid, url }) => {
+const Scan = ({ uid, email, url }) => {
   const [report, setReport] = useState();
   const [isScanning, setIsScanning] = useState(false);
 
@@ -22,6 +23,7 @@ const Scan = ({ uid, url }) => {
       var parsedData = data.categories;
       setReport(parsedData);
       saveReportToDB(uid, parsedData);
+      sendNotification(uid, email, url, JSON.stringify(parsedData));
     });
   }
 

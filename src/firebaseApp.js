@@ -67,16 +67,23 @@ const saveReportToDB = (uid, reportData) => {
   }
 }
 
-const getReportsByUid = (uid) => {
+const getReportsByUid = async (uid) => {
   db.collection('reports')
   .where("uid", "==", uid)
   .get()
-  .on("value", function(snapshot) { 
-    snapshot.forEach(function(data) {
-       console.log("The data is: ", data);
-    });  
- });
+  .then(querySnapshot => {
+    const reports = [];
+    querySnapshot.forEach(doc => {
+      reports.push({
+        ...doc.data()
+      });
+    });
+    return reports;
+  })
+  .catch(err => {
+    console.log(err);
+  })
 }
 
-export { auth, fbSignIn, fbSignUp, fbSignOut, saveReportToDB };
+export { auth, fbSignIn, fbSignUp, fbSignOut, saveReportToDB, getReportsByUid };
 export default db;

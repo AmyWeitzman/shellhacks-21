@@ -1,5 +1,4 @@
-import React, { useState, useContext } from 'react';
-import UserContext from '../../Context.js';
+import React, { useState } from 'react';
 import './Dashboard.css';
 
 import NavBar from '../subcomponents/NavBar';
@@ -10,9 +9,13 @@ import Resources from '../subcomponents/views/Resources';
 
 const Dashboard = () => {
   const [curView, setCurView] = useState("scan");
-  const user = useContext(UserContext);
 
-  console.log("USERSS0", user);
+  // FOR TESTING  //
+  const testEmail = "test@email.com";
+  const testUrl = "https://www.google.com/";
+  const testUid = "1234";
+  // FOR TESTING //
+
   return (
     <div id="dashboard-container">
       <div className="row">
@@ -20,10 +23,10 @@ const Dashboard = () => {
           <NavBar curView={curView} switchView={setCurView} />
         </div>
         <div className="col">
-          {user === undefined && curView === "profile" && <Profile email={"bemail"} url="aurl"></Profile>}
-          {user === undefined && curView === "scan" && <Scan uid={'1234'} url="https://www.google.com/"></Scan>}
-          {user === undefined && curView === "reports" && <History uid={'1234'}></History>}
-          {user === undefined && curView === "resources" && <Resources></Resources>}
+          {curView === "profile" && <Profile email={testEmail} url={testUrl}></Profile>}
+          {curView === "scan" && <Scan uid={testUid} email={testEmail} url={testUrl}></Scan>}
+          {curView === "reports" && <History uid={testUid}></History>}
+          {curView === "resources" && <Resources></Resources>}
         </div>
       </div>
     </div>

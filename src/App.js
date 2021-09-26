@@ -12,28 +12,30 @@ function App() {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged(userAuth => {
+    auth.onAuthStateChanged(userAuth => {
       if (userAuth) {
-        const user = {
+        const userInfo = {
           uid: userAuth.uid,
           email: userAuth.email
         }
-        setUser(user);
+        setUser(userInfo);
       } else {
         setUser(null);
       }
     })
-    return unsubscribe;
-  }, [])
+  }, []);
 
   return (
     <div className="wrapper">
-      <h1 id="app-title">{APP_NAME}</h1>
+      <div id="title-img-container">
+        <img src="https://www.akeaweb.com/wp-content/uploads/2018/02/akea-services-web-accessibility-wcag.png" alt="Accessibility icon: person in blue circle" width={60} height={60} />
+        <h1 id="app-title">{APP_NAME}</h1>
+      </div>
       <BrowserRouter>
         <Switch>
-          <Route exact path={"/" | "/dashboard"} component={user ? Dashboard : SignIn} />
           <Route exact path="/signin" component={SignIn} />
           <Route exact path="/signup" component={SignUp} />
+          <Route exact path={"/" | "/dashboard"} component={user ? Dashboard : SignIn} />
         </Switch>
       </BrowserRouter>
     </div>

@@ -47,4 +47,10 @@
   text-align: left;
   margin-top: 0px;
   margin-bottom: 20px;
+  margin-left: 10px;
 }
+
+#title-img-container {
+  display: flex;
+}
+

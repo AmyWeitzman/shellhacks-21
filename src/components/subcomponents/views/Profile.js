@@ -1,7 +1,7 @@
 import React from 'react';
 import './Profile.css';
 
-const Profile = ({email, url}) => {
+const Profile = ({ email, url }) => {
     return (
       <div id="profile-container">
         <form>
