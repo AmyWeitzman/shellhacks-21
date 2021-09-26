@@ -5,7 +5,7 @@
 }
 
 .report-section {
-  margin-bottom: 30px;
+  margin: 30px 50px;
 }
 
 .category-item {
@@ -30,4 +30,8 @@
 
 .issue-item-green {
   color: green;
+}
+
+.issue-icon {
+  margin-right: 10px;
 }

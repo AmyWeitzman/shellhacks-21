@@ -18,3 +18,7 @@
   color:rgb(28, 91, 226);
   cursor: pointer;
 }
+
+.active {
+  text-decoration: underline;
+}

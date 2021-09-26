@@ -9,10 +9,15 @@ const API_KEY = process.env.REACT_APP_WAVE_API_KEY;
 
 const Scan = ({ uid, url }) => {
   const [report, setReport] = useState();
+  const [isScanning, setIsScanning] = useState(false);
 
   const scanWebsite = () => { 
+    setIsScanning(true);
     fetch(`${BASE_URL}?key=${API_KEY}&reporttype=2&url=${url}`)
-    .then(res => res.json())
+    .then(res => {
+      setIsScanning(false);
+      return res.json();
+    })
     .then(data => {
       var parsedData = data.categories;
       setReport(parsedData);
@@ -22,9 +27,13 @@ const Scan = ({ uid, url }) => {
 
   return (
     <div id="scan-container">
-      {report 
+      { report 
         ? <Report data={report} />
-        : <button type="submit" class="btn btn-primary btn-block" id="scan-btn" onClick={scanWebsite}>Scan Website</button>
+        : <button type="submit" class="btn btn-primary btn-block" id="scan-btn" onClick={scanWebsite} disabled={isScanning}>Scan Website</button>
+      }
+      { isScanning
+        ? <p id="scanning-message">Scanning...</p>
+        : ""
       }
     </div>
   );

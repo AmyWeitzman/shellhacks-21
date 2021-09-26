@@ -3,3 +3,10 @@
   margin: auto;
   margin-top: 200px;
 }
+
+#scanning-message {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 20px;
+}

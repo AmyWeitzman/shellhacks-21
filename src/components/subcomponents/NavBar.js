@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 import { fbSignOut } from '../../firebaseApp';
 import "./NavBar.css";
 
-const NavBar = ({ switchView }) => {
+const NavBar = ({ curView, switchView }) => {
   const history = useHistory();
 
   const signOut = () => {
@@ -14,13 +14,13 @@ const NavBar = ({ switchView }) => {
   return (
     <ul class="nav flex-column" id="navbar-container">
       <li class="nav-item">
-        <div class="nav-link" onClick={() => switchView("profile")}>My profile</div>
+        <div class={`nav-link ${(curView === "profile") ? 'active' : ''}`} onClick={() => switchView("profile")}>My profile</div>
       </li>
       <li class="nav-item">
-        <div class="nav-link" onClick={() => switchView("scan")}>Scan website</div>
+        <div class={`nav-link ${(curView === "scan") ? 'active' : ''}`} onClick={() => switchView("scan")}>Scan website</div>
       </li>
       <li class="nav-item">
-        <div class="nav-link" onClick={() => switchView("reports")}>Report history</div>
+        <div class={`nav-link ${(curView === "reports") ? 'active' : ''}`} onClick={() => switchView("reports")}>Report history</div>
       </li>
       <li class="nav-item">
         <div class="navbar-spacer"></div>

@@ -5,16 +5,16 @@ import ReportChart from './ReportChart';
 
 const Report = ({ data }) => {
 
-  const getIssueItemColor = (issueCount) => {
+  const getIssueItemLevel = (issueCount) => {
     switch(true) {
       case (issueCount === 0):
-        return "issue-item-green";
+        return ["fa-check-square", "issue-item-green"];
       case ((issueCount) > 0 && (issueCount <= 3)):
-        return "issue-item-yellow";
+        return ["fa-exclamation-triangle", "issue-item-yellow"];
       case (issueCount > 3):
-        return "issue-item-red";
+        return ["fa-exclamation-circle", "issue-item-red"];
       default:
-        return "";
+        return ["", ""];
     }
   }
 
@@ -25,10 +25,12 @@ const Report = ({ data }) => {
       {
         Object.keys(data).map((category, i) => {
           const el = data[category];
+          const [issueIcon, issueColor] = getIssueItemLevel(el.count);
           return (
             <div className="report-section" key={i}>
               <h4 className="category-item">
-                <span className={`category-heading ${getIssueItemColor(el.count)}`}>{el.description} </span> 
+                <i className={`fa ${issueIcon} ${issueColor} issue-icon`}></i>
+                <span className={`category-heading`}>{el.description} </span> 
                 <span className="category-count">({el.count})</span>
               </h4>
               <ul>
