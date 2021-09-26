@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/shellhacks-21/static/css/main.5e13a97d.chunk.css",
+    "main.js": "/shellhacks-21/static/js/main.62fba483.chunk.js",
+    "main.js.map": "/shellhacks-21/static/js/main.62fba483.chunk.js.map",
+    "runtime-main.js": "/shellhacks-21/static/js/runtime-main.00248a44.js",
+    "runtime-main.js.map": "/shellhacks-21/static/js/runtime-main.00248a44.js.map",
+    "static/js/2.2c01df00.chunk.js": "/shellhacks-21/static/js/2.2c01df00.chunk.js",
+    "static/js/2.2c01df00.chunk.js.map": "/shellhacks-21/static/js/2.2c01df00.chunk.js.map",
+    "index.html": "/shellhacks-21/index.html",
+    "static/css/main.5e13a97d.chunk.css.map": "/shellhacks-21/static/css/main.5e13a97d.chunk.css.map",
+    "static/js/2.2c01df00.chunk.js.LICENSE.txt": "/shellhacks-21/static/js/2.2c01df00.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.00248a44.js",
+    "static/js/2.2c01df00.chunk.js",
+    "static/css/main.5e13a97d.chunk.css",
+    "static/js/main.62fba483.chunk.js"
+  ]
+}
