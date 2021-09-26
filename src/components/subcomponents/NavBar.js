@@ -23,6 +23,9 @@ const NavBar = ({ curView, switchView }) => {
         <div class={`nav-link ${(curView === "reports") ? 'active' : ''}`} onClick={() => switchView("reports")}>Report history</div>
       </li>
       <li class="nav-item">
+        <div class={`nav-link ${(curView === "resources") ? 'active' : ''}`} onClick={() => switchView("resources")}>Resources</div>
+      </li>
+      <li class="nav-item">
         <div class="navbar-spacer"></div>
       </li>
       <li class="nav-item" id="sign-out-btn-container">
