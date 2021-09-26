@@ -1,6 +1,6 @@
 # [Ally](https://amyweitzman.github.io/shellhacks-21/)
 
-[Link](https://amyweitzman.github.io/shellhacks-21/)
+[Website Link](https://amyweitzman.github.io/shellhacks-21/) <br>
 [Demo](https://youtu.be/0BsXuhJLExw)
 
 Did you know that 3.8 million U.S. adults aged 21-64 are blind or have trouble seeing, even with glasses? Or that more than 466 million people worldwide have a hearing disability? Unfortunately, 98% of the world's top one million websites don't offer full accessibility and 71% of website visitors with disabilities will leave a website that is not accessible. With technology being a prominent feature of everyday life, it is crucial that people develop websites that adhere to accessibility standards and guidelines so that everyone has an opportunity to access content on the web. However, much of the tools and information that is available to help developers ensure that their sites contain the necessary accessibility features is not well known and requires people to use multiple tools. Thus, it is easy for developers to skip this crucial development step. But, since the internet is necessary for everyone's lives, developers should be an ally for the A11Y community. I created a website that eases this process and provides centralized tools and resources for developers to check the accessibility of their site and receive guidance on how to fix the issues. 
